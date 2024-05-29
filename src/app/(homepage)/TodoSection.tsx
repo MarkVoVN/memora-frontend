@@ -1,10 +1,11 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { Dialog } from "@/components/ui/dialog";
 import getQueryClient from "@/hooks/getQueryClient";
 import { getTodoList } from "@/lib/api/testAPI";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
-import { RotateCcwIcon } from "lucide-react";
+import { RotateCcwIcon, UploadIcon } from "lucide-react";
 import React from "react";
 
 export default function TodoSection() {
@@ -20,7 +21,7 @@ export default function TodoSection() {
       <div className="flex flex-row gap-4 items-center">
         <h2>Todo list </h2>
         <Button
-          variant={"outline"}
+          variant={"exitButton"}
           onClick={() => queryClient.invalidateQueries({ queryKey: ["todos"] })}
           className="flex flex-row gap-2 items-center"
         >
