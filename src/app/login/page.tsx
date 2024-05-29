@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { useErrorNotification } from "@/hooks/useErrorNotification";
 import { loginUser } from "@/lib/api/userAPI";
