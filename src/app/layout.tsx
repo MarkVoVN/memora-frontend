@@ -13,7 +13,6 @@ export const metadata: Metadata = {
   title: "Memora",
   description: "Memora makes memmorization easy with flashcard",
 };
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -33,7 +32,6 @@ export default function RootLayout({
             style: {
               zIndex: "60 !important",
             },
-            // duration: 50000,
           }}
           reverseOrder={false}
         />
