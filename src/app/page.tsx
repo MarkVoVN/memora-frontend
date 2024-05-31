@@ -14,7 +14,7 @@ export default async function Home() {
 
   return (
     <main className="">
-      <h1>This is Landing Page</h1>
+      <h1>This is Landing Page for Memora</h1>
       <h3>{process.env.BASE_URL}</h3>
       <HydrationBoundary state={dehydratedState}>
         <TodoSection />
