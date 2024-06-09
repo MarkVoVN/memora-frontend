@@ -2,7 +2,7 @@ import getQueryClient from "@/hooks/getQueryClient";
 import { getTodoList } from "@/lib/api/testAPI";
 import { HydrationBoundary, dehydrate, useQuery } from "@tanstack/react-query";
 import React from "react";
-import TodoSection from "./(homepage)/TodoSection";
+import TodoSection from "./components/TodoSection";
 
 export default async function Home() {
   const queryClient = getQueryClient();
