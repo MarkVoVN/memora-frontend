@@ -54,7 +54,7 @@ function RegisterSection() {
           ></Image>
         </div>
         <div className="flex flex-row items-center gap-2">
-          Already have an account?{" "}
+          Already have an account?
           <Chip
             label="Sign in"
             className="hover:bg-primary hover:text-shade-1-100% hover:border-primary"
