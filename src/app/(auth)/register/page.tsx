@@ -62,7 +62,7 @@ function RegisterSection() {
         </div>
       </div>
       <div className="flex flex-col items-center justify-center w-full h-full ">
-        <div className="flex flex-col items-center justify-center min-w-[480px] max-w-[560px] py-10 px-12 gap-4 border-[1px] border-neutral-3 rounded-3xl">
+        <div className="flex flex-col items-center justify-center min-w-[480px] max-w-[600px] py-10 px-12 gap-4 border-[1px] border-neutral-3 rounded-3xl">
           <Image
             src={"/logo.svg"}
             alt="Register logo"

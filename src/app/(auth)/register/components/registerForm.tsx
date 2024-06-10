@@ -173,7 +173,7 @@ export function RegisterForm({ className, ...props }: RegisterFormProps) {
           <Button
             disabled={isLoading}
             variant={"outline"}
-            className="w-full text-shade-1-100% hover:text-shade-1-100% bg-neutral-4 rounded-full hover:bg-primary "
+            className="w-full text-shade-1-100% hover:text-shade-1-100% bg-neutral-4 rounded-full hover:bg-primary py-6"
           >
             {isLoading ? <LoadingLine /> : "Create Account"}
           </Button>
