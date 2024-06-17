@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { useErrorNotification } from "@/hooks/useErrorNotification";
 import { getTodoList, postTodo } from "@/lib/api/testAPI";
 import { useGlobalStore } from "@/lib/store/global/provider";
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils/utils";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { RotateCcwIcon } from "lucide-react";
 
