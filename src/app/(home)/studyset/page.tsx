@@ -10,6 +10,9 @@ import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { getStudySetList, StudySetModel } from "@/lib/api/studysetAPI";
 import { useErrorNotification } from "@/hooks/useErrorNotification";
 import { useRouter } from "next/navigation";
+import { StudySetCard } from "./components/StudySetCard";
+import { QuizCard } from "./components/QuizCard";
+import { QuizModel } from "@/lib/api/quizAPI";
 
 const mockItemList: StudySetModel[] = [
   {
@@ -106,13 +109,36 @@ function MyStudySetPage() {
   return (
     <div>
       <div className="flex flex-col gap-4">
-        <Typography hStyle={"h2"}>Continue your study</Typography>
+        <Typography hStyle={"h4"}>Continue your study</Typography>
         <div className="flex flex-nowrap gap-8">
-          <StudySetCreateShowcaseCard
-            handleClick={() => router.push("/studyset/create")}
-          />
+          <StudySetCreateShowcaseCard href={"/studyset/create"} />
           {itemList.slice(0, 3).map((item) => (
-            <StudySetShowcaseCard key={item.studySetId} studyset={item} />
+            <StudySetShowcaseCard
+              key={item.studySetId}
+              studyset={item}
+              href={`/studyset/${item.studySetId}`}
+            />
+          ))}
+        </div>
+        <Typography hStyle={"h4"}>My Study Set</Typography>
+        <div className="flex flex-nowrap gap-8 overflow-scroll">
+          {itemList.slice(0, 5).map((item) => (
+            <StudySetCard key={item.studySetId} studyset={item} />
+          ))}
+        </div>
+        <Typography hStyle={"h4"}>My Quiz</Typography>
+        <div className="flex flex-wrap gap-8 overflow-scroll">
+          {itemList.slice(0, 5).map((item) => (
+            <QuizCard
+              key={item.studySetId}
+              quiz={
+                {
+                  quizName: item.studySetName,
+                  quizId: item.studySetId,
+                  ...item,
+                } as QuizModel
+              }
+            />
           ))}
         </div>
       </div>

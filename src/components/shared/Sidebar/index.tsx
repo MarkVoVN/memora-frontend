@@ -10,6 +10,7 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import path from "path";
 import React, { useEffect, useRef, useState } from "react";
 
 interface SidebarProps {
@@ -117,6 +118,8 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
     }
   }, [sidebarExpanded]);
 
+  console.log(pathname);
+
   return (
     <aside
       ref={sidebar}
@@ -170,8 +173,10 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                     <Link
                       href={item.link}
                       className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-neutral-6 duration-300 ease-in-out hover:bg-graydark ${
-                        pathname.includes(item.link.toLowerCase()) &&
-                        "bg-neutral-7"
+                        (item.link.toLowerCase() === "/"
+                          ? pathname === "/"
+                          : pathname.includes(item.link.toLowerCase())) &&
+                        "bg-neutral-7 text-shade-1-100%"
                       }`}
                     >
                       {item.icon}
